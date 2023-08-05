@@ -1,0 +1,101 @@
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    display: inline-block;
+    margin: 0 5px;
+  }
+  
+  button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  li.active button {
+    background-color: #007bff;
+  }
+  
+  li.active button:hover {
+    background-color: #0056b3;
+  }
+  
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideOut {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .animating {
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+  }
+  .item-list {
+    list-style: none;
+    padding: 0;
+    transition: transform 0.3s; 
+    will-change: transform;
+  }
+
+  .app{
+    overflow: hidden;
+  }
+  
+
+  .item-list.slide-in {
+    transform: translateX(-100%);
+  }
+  
+  .item-list.slide-out {
+    transform: translateX(100%);
+  }
+  
+  .item-list li {
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .item-list li:last-child {
+    border-bottom: none;
+  }
